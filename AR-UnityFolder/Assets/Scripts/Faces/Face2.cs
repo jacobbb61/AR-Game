@@ -7,9 +7,11 @@ public class Face2 : MonoBehaviour
     GameObject Ball;
     Animator Anim;
 
-    public GameObject Plate1, Plate2;
+    public GameObject Plate1, Wire;
 
     public bool open = false;
+
+
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class Face2 : MonoBehaviour
 
     void Update()
     {
-        if (Plate1.GetComponent<PressurePlate>().On >= 1 && Plate2.GetComponent<PressurePlate>().On >= 1) { open = true; } else { open = false; }
+        if (Plate1.GetComponent<PressurePlate>().On >= 1 && Wire.GetComponent<WireDetect>().on==true) { open = true; } else { open = false; }
         if (open) { Anim.SetBool("Open", true); } else { Anim.SetBool("Open", false); }
     }
 }

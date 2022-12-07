@@ -11,10 +11,6 @@ public class WireDetect : MonoBehaviour
      
     void Update()
     {
-        if (on) { Face.GetComponent<Face1>().open = true; }
-        else { Face.GetComponent<Face1>().open = false; }
-
-
         RaycastHit hit;
 
         if (Physics.Raycast(Detector.transform.position, Detector.transform.TransformDirection(Vector3.up), out hit, 1f))

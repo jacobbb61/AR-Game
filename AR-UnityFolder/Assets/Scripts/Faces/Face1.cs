@@ -8,6 +8,7 @@ public class Face1 : MonoBehaviour
     Animator Anim;
 
     public GameObject Plate;
+    public GameObject Wire1;
 
     public bool open = false;
 
@@ -19,7 +20,7 @@ public class Face1 : MonoBehaviour
 
     void Update()
     {
-
+        if (Wire1.GetComponent<WireDetect>().on == true) { open = true; }else { open = false; }
         if (open) { Anim.SetBool("Open", true); } else { Anim.SetBool("Open", false); }
     }
 }
