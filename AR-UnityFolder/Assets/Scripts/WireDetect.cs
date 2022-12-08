@@ -5,7 +5,7 @@ using UnityEngine;
 public class WireDetect : MonoBehaviour
 {
     public bool on;
-    public GameObject Face, Detector;
+    public GameObject Detector;
 
 
      
