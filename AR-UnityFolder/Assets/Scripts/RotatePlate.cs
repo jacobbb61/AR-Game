@@ -8,7 +8,7 @@ public class RotatePlate : MonoBehaviour
     public GameObject LM, High;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Ball")) { on = true; High.SetActive(true); }
+        if (other.transform.CompareTag("Ball")) { on = true; High.SetActive(true); Rotate(); }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -17,8 +17,8 @@ public class RotatePlate : MonoBehaviour
 
     private void Update()
     {
-        if (on && LM.GetComponent<LevelManager>().objectHit2.CompareTag("Side") && (Input.GetMouseButtonDown(0))) { Rotate(); }
-       // if (on && LM.GetComponent<LevelManager>().objectHit.CompareTag("Side") && (Input.touchCount > 0)) { Rotate(); }
+       // if (on && LM.GetComponent<LevelManager>().objectHit2.CompareTag("Side") && (Input.GetMouseButtonDown(0))) { Rotate(); }
+       // if (on && LM.GetComponent<LevelManager>().objectHit2.CompareTag("Side") && (Input.touchCount >= 1)) { Rotate(); }
     }
 
     void Rotate()

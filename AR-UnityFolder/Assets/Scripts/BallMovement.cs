@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject  MovePoint;
     public float speed;
 
-    private void Start()
-    {
-        Player = GameObject.FindGameObjectWithTag("MainCamera");
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, MovePoint.transform.position, speed * Time.deltaTime);
     }
 }

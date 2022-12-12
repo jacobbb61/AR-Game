@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Face4 : MonoBehaviour
 {
-    GameObject Ball;
+    public GameObject Plate;
+
     Animator Anim;
 
     public bool open = false;
 
     void Start()
     {
-        Ball = GameObject.FindGameObjectWithTag("Ball");
+
         Anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
+        if (Plate.GetComponent<PressurePlate>().On >= 1) { open = true; }else { open = false; }
         if (open) { Anim.SetBool("Open", true); } else { Anim.SetBool("Open", false); }
     }
 }
