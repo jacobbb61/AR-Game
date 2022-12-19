@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
         {
             objectHit = hit2.transform;
             Debug.Log(hit2.transform.tag);
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
             {
                 if (objectHit.transform.CompareTag("Grid")) {
                     playerAgent.destination = objectHit.transform.position;

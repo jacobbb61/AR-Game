@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &892249452501143962
+--- !u!1 &3456809749045971724
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 892249452501143966}
-  - component: {fileID: 892249452501143967}
-  - component: {fileID: 892249452501143964}
-  - component: {fileID: 2738571164249198817}
-  - component: {fileID: 8902777803193311142}
-  - component: {fileID: 1451243729671595656}
+  - component: {fileID: 3456809749045971720}
+  - component: {fileID: 3456809749045971721}
+  - component: {fileID: 3456809749045971722}
+  - component: {fileID: 3456809749045971723}
+  - component: {fileID: 4833483010142564795}
+  - component: {fileID: 3587066251926771989}
   m_Layer: 0
-  m_Name: GridSpace
+  m_Name: GridStair
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &892249452501143966
+--- !u!4 &3456809749045971720
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892249452501143962}
-  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 9.5, y: 7.1, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 3456809749045971724}
+  m_LocalRotation: {x: 0.6532818, y: -0.27059916, z: 0.65328, w: 0.27059996}
+  m_LocalPosition: {x: -4.474, y: -1.32, z: 0.5}
+  m_LocalScale: {x: 1, y: 1.2907791, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &892249452501143967
+  m_LocalEulerAnglesHint: {x: 135, y: -90, z: 0}
+--- !u!33 &3456809749045971721
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892249452501143962}
+  m_GameObject: {fileID: 3456809749045971724}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &892249452501143964
+--- !u!23 &3456809749045971722
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892249452501143962}
+  m_GameObject: {fileID: 3456809749045971724}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2738571164249198817
+--- !u!64 &3456809749045971723
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892249452501143962}
+  m_GameObject: {fileID: 3456809749045971724}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -100,14 +100,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &8902777803193311142
+--- !u!114 &4833483010142564795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456809749045971724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea86e9be57b2fa44ab027eac8b2d9040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &3587066251926771989
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892249452501143962}
+  m_GameObject: {fileID: 3456809749045971724}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 36f00fcfae7fac14ca66692a8abaab89, type: 2}
@@ -120,15 +132,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1451243729671595656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892249452501143962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea86e9be57b2fa44ab027eac8b2d9040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

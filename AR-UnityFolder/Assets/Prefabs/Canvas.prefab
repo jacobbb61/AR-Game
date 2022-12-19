@@ -1134,7 +1134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -57}
+  m_AnchoredPosition: {x: -2, y: 80.61565}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6101752670405992725
@@ -1181,25 +1181,13 @@ MonoBehaviour:
   m_FillRect: {fileID: 6101752670059783074}
   m_HandleRect: {fileID: 6101752669982560800}
   m_Direction: 0
-  m_MinValue: 1
-  m_MaxValue: 2
+  m_MinValue: 0.3
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.1
+  m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6101752671583564450}
-        m_TargetAssemblyTypeName: UImanager, Assembly-CSharp
-        m_MethodName: Scale
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6101752670418912085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,14 +1958,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ed77c2a122a84d8201f6e1067a87b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cube: {fileID: 0}
+  Level: {fileID: 0}
   Open: {fileID: 6101752671062500930}
   Close: {fileID: 6101752671707728103}
   ScaleObj: {fileID: 6101752670405992723}
   ARSessionOrigin: {fileID: 0}
   moveObjText: {fileID: 6101752669877535304}
   moveBallText: {fileID: 6101752669749640339}
-  openUI: 1
+  openUI: 0
   moveObject: 0
   scale: 0.05
 --- !u!1 &6101752671707728103
@@ -2017,7 +2005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -625.839}
+  m_AnchoredPosition: {x: 2, y: -940.86084}
   m_SizeDelta: {x: 800, y: 541.678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6101752671714829980

@@ -60,7 +60,7 @@ public class UImanager : MonoBehaviour
     public void Button()
     {
         openUI =! openUI;
-        Level.GetComponent<LevelManager>().ReBuildNavMesh();
+       // Level.GetComponent<LevelManager>().ReBuildNavMesh();
     }
     public void ButtonMoveObject()
     {

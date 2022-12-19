@@ -40,7 +40,6 @@ public class PlaceObject : MonoBehaviour
         return false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         lastposText.text = lastPos.ToString();
@@ -56,19 +55,19 @@ public class PlaceObject : MonoBehaviour
             
             var hitPose = hits[0].pose;
 
-        /*    if (spawnObj == null)
+           if (spawnObj == null)
             {
                     spawnObj = Instantiate(ObjectToPlace, hitPose.position, hitPose.rotation);
-                    Canvas.GetComponent<UImanager>().Cube = spawnObj;
+                    Canvas.GetComponent<UImanager>().Level = spawnObj;
             }
             else
-            { */
+            { 
                
               if (moveObj == true) { spawnObj.transform.position = hitPose.position; lastPos = hitPose.position;}
               else { spawnObj.transform.position = lastPos; }
               
-                       
-           // }
+                     
+            }
         }
 
 
