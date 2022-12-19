@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 public class UImanager : MonoBehaviour
 {
-    public GameObject Cube, Ball;
+    public GameObject Level;
     public GameObject Open, Close;
-    public GameObject HeightObj, ScaleObj;
+    public GameObject ScaleObj;
     public GameObject ARSessionOrigin;
 
     public TextMeshProUGUI moveObjText;
@@ -15,14 +15,13 @@ public class UImanager : MonoBehaviour
 
     public bool openUI;
     public bool moveObject = true;
-    public bool moveBall = true;
+
 
     public float scale;
-    public float Ypos;
+
     private void Start()
     {
-        Cube = GameObject.FindGameObjectWithTag("Player");
-        Ball = GameObject.FindGameObjectWithTag("Ball");
+        Level = GameObject.FindGameObjectWithTag("Level");
     }
 
 
@@ -39,8 +38,8 @@ public class UImanager : MonoBehaviour
         }
 
         scale = ScaleObj.GetComponent<Slider>().value;
-        Cube.transform.localScale = new Vector3(scale,scale,scale);
-        Cube.transform.position = new Vector3(Cube.transform.position.x, HeightObj.GetComponent<Slider>().value, Cube.transform.position.z);
+        Level.transform.localScale = new Vector3(scale,scale,scale);
+     
 
         if (moveObject)
         {
@@ -52,19 +51,7 @@ public class UImanager : MonoBehaviour
             moveObjText.text = "Off";
             ARSessionOrigin.GetComponent<PlaceObject>().moveObj = false;
         }
-        if (moveBall)
-        {
-            moveBallText.text = "Ball";
-           // ARSessionOrigin.GetComponent<RotateSide>().enabled = false;
-            Ball.GetComponent<BallMovement>().enabled = true;
-        }
-        else
-        {
-            moveBallText.text = "Sides";
-           // ARSessionOrigin.GetComponent<RotateSide>().enabled = true;
-            Ball.GetComponent<BallMovement>().enabled = false;
-            Ball.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        }
+
 
 
     }
@@ -73,14 +60,12 @@ public class UImanager : MonoBehaviour
     public void Button()
     {
         openUI =! openUI;
+        Level.GetComponent<LevelManager>().ReBuildNavMesh();
     }
     public void ButtonMoveObject()
     {
         moveObject = !moveObject;
     }
-    public void ButtonMoveBall()
-    {
-        moveBall = !moveBall;
-    }
+
 
 }

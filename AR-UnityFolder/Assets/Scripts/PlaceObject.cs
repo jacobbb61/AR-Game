@@ -56,19 +56,19 @@ public class PlaceObject : MonoBehaviour
             
             var hitPose = hits[0].pose;
 
-            if (spawnObj == null)
+        /*    if (spawnObj == null)
             {
                     spawnObj = Instantiate(ObjectToPlace, hitPose.position, hitPose.rotation);
                     Canvas.GetComponent<UImanager>().Cube = spawnObj;
             }
             else
-            { 
+            { */
                
               if (moveObj == true) { spawnObj.transform.position = hitPose.position; lastPos = hitPose.position;}
               else { spawnObj.transform.position = lastPos; }
               
                        
-            }
+           // }
         }
 
 
