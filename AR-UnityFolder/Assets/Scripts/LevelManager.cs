@@ -30,6 +30,9 @@ public class LevelManager : MonoBehaviour
                 if (objectHit.transform.CompareTag("Grid")) {
                     playerAgent.destination = objectHit.transform.position;
                     objectHit.GetComponent<Animator>().SetTrigger("Active");
+                }else if (objectHit.transform.CompareTag("Rotate"))
+                {
+                    objectHit.GetComponent<RotateCrane>().Active();
                 }
             }
             else { return; }
