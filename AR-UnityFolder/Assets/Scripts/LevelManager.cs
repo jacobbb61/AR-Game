@@ -7,7 +7,8 @@ public class LevelManager : MonoBehaviour
 {
 
     public Transform objectHit;
-    public GameObject Player;
+    public Transform LastGridHit;
+    public GameObject Player, GridAnimation;
     public NavMeshAgent playerAgent;
 
 
@@ -25,11 +26,13 @@ public class LevelManager : MonoBehaviour
         {
             objectHit = hit2.transform;
             Debug.Log(hit2.transform.tag);
-            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+            if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
             {
                 if (objectHit.transform.CompareTag("Grid")) {
                     playerAgent.destination = objectHit.transform.position;
-                    objectHit.GetComponent<Animator>().SetTrigger("Active");
+                    GridAnimation.transform.position = objectHit.transform.position;
+                    GridAnimation.GetComponent<Animator>().SetTrigger("Active");
+                    objectHit = LastGridHit;
                 }else if (objectHit.transform.CompareTag("Rotate"))
                 {
                     objectHit.GetComponent<RotateCrane>().Active();
@@ -40,8 +43,4 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void ReBuildNavMesh()
-    {
-
-    }
 }

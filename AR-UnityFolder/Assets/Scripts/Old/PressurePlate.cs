@@ -5,7 +5,9 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     Animator anim;
-    public int On = 0;
+    public bool  On;
+    public GameObject FireWorks;
+    public GameObject sun;
 
     private void Start()
     {
@@ -14,12 +16,14 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        On ++;
-        anim.SetBool("On", true);
+        On = true;
+        FireWorks.SetActive(true);
+        sun.SetActive(false);
     }
     private void OnTriggerExit(Collider other)
     {
-        On--;
-        anim.SetBool("On", false);
+        On = false;
+        FireWorks.SetActive(false);
+        sun.SetActive(true);
     }
 }

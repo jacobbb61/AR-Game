@@ -8,7 +8,7 @@ public class NavigationBaker : MonoBehaviour
 
     public NavMeshSurface[] surfaces;
 
-    // Use this for initialization
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) { ReBuildMesh(); }

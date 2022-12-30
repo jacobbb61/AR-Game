@@ -7,14 +7,17 @@ TagManager:
   - Origin
   - Level
   - Grid
+  - Rotate
+  - Button
+  - MainFloor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - RaycastWithoutNavmesh
   - Water
   - UI
-  - 
+  - NavMesh
   - 
   - 
   - 
