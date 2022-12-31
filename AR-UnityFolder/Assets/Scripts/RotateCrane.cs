@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class RotateCrane : MonoBehaviour
 {
-    float smooth = 5.0f;
+
     GameObject Player;
     GameObject Level;
 
@@ -13,7 +13,9 @@ public class RotateCrane : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Level = GameObject.FindGameObjectWithTag("Level");
+
     }
+    
 
     public void Active()
     {

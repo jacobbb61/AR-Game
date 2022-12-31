@@ -22,16 +22,32 @@ public class MainGridManager : MonoBehaviour
         {
             objectHit = hit.transform;
             Debug.Log(hit.transform.tag);
-            if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
+            
+            //////////////////////////////////// mouse input testing
+            if (Input.GetMouseButtonDown(0))
             {
                 if (objectHit.transform.CompareTag("Button"))
                 {
                     objectHit.GetComponent<Renderer>().material = Green;
                     buttons ++;
                 }
-
             }
             else { return; }
+            ///////////////////////////////////
+
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    if (objectHit.transform.CompareTag("Button"))
+                    {
+                        objectHit.GetComponent<Renderer>().material = Green;
+                        buttons++;
+                    }
+                }
+            }
 
         } 
         
