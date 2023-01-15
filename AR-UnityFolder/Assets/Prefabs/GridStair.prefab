@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3456809749045971720
 Transform:
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3456809749045971724}
   m_LocalRotation: {x: 0.6532818, y: -0.27059916, z: 0.65328, w: 0.27059996}
   m_LocalPosition: {x: -4.474, y: -1.32, z: 0.5}
-  m_LocalScale: {x: 1, y: 1.509308, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.44656, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea86e9be57b2fa44ab027eac8b2d9040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ColorTime: 0
+  on: 0
 --- !u!95 &3587066251926771989
 Animator:
   serializedVersion: 4

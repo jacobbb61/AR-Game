@@ -2,52 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
 public class LevelManager : MonoBehaviour
 {
-
-    public Transform objectHit;
-    public Transform LastGridHit = null;
-    public GameObject Player, GridAnimation;
-    public NavMeshAgent playerAgent;
+    NavMeshAgent playerAgent;
+    GameObject Player;
 
 
+    public Transform objectHit = null;
+    public Transform LastGridHit;
+    
+    public GameObject GridAnimation;
+    
 
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         playerAgent = Player.GetComponent<NavMeshAgent>();
+        GetComponent<NavigationBaker>().ReBuildMesh();
+        LastGridHit = Player.transform;
     }
     void Update()
     {
-        Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastOutput();     
+    }
 
-        if (Physics.Raycast(ray2, out RaycastHit hit2))
+    void RaycastOutput()
+    {
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            objectHit = hit2.transform;
-            Debug.Log(hit2.transform.tag);
+            objectHit = hit.transform;
+            Debug.Log(hit.transform.tag);
+
 
             //////////////////////////////////// mouse input testing
             if (Input.GetMouseButtonDown(0))
             {
                 // Touch input managers for grid and rotations
-                if (objectHit.transform.CompareTag("Grid")) 
+                if (objectHit.CompareTag("Grid"))
                 {
                     GridTouch(objectHit);
                 }
-                else if (objectHit.transform.CompareTag("Rotate"))
+                else if (objectHit.CompareTag("Rotate"))
                 {
-                    objectHit.GetComponent<RotateCrane>().Active();
+                    objectHit.GetComponentInParent<RotatingBridge>().Active();
                 }
-                else if (objectHit.transform.CompareTag("Drag"))
+                else if (objectHit.CompareTag("Drag"))
                 {
                     objectHit.GetComponent<DragBridge>().Active();
                 }
             }
             //////////////////////////////////// 
-
-
-
+            
 
             if (Input.touchCount > 0)
             {
@@ -55,34 +63,32 @@ public class LevelManager : MonoBehaviour
 
                 if (touch.phase == TouchPhase.Began)
                 {
-                    if (objectHit.transform.CompareTag("Grid"))
+                    if (objectHit.CompareTag("Grid"))
                     {
-                        GridTouch(objectHit);    
+                        GridTouch(objectHit);
                     }
-                    else if (objectHit.transform.CompareTag("Rotate"))
+                    else if (objectHit.CompareTag("Rotate"))
                     {
-                        objectHit.GetComponent<RotateCrane>().Active();
+                     //objectHit.GetComponentInParent<RotatingBridge>().Active();
                     }
-                    else if (objectHit.transform.CompareTag("Drag"))
+                    else if (objectHit.CompareTag("Drag"))
                     {
                         objectHit.GetComponent<DragBridge>().Active();
                     }
                 }
+            } else { return; }
 
+        } 
+    }
 
-            }
-
-            else { return; } 
-
-        }
-
-        void GridTouch(Transform grid)
+    void GridTouch(Transform grid)
         {
-          playerAgent.destination = grid.position;
-          GridAnimation.transform.position = grid.position;
-          GridAnimation.GetComponent<Animator>().SetTrigger("Active");
-          LastGridHit = grid;
+            playerAgent.destination = grid.position;
+            GridAnimation.transform.position = grid.position;
+            GridAnimation.GetComponent<Animator>().SetTrigger("Active");
+            LastGridHit = grid;
         }
     }
 
-}
+
+
