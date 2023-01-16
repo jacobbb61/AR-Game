@@ -45,7 +45,7 @@ public class DragBridge : MonoBehaviour
         }
 
 
-        GameObject.FindGameObjectWithTag("MainFloor").GetComponent<NavigationBaker>().ReBuildMesh();
+        GameObject.FindGameObjectWithTag("Level").GetComponent<NavigationBaker>().ReBuildMesh();
         Player.GetComponent<NavMeshAgent>().enabled = true;
         Player.GetComponent<NavMeshAgent>().destination = Level.GetComponent<LevelManager>().LastGridHit.transform.position;
 

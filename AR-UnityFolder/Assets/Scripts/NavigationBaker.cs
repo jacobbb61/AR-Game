@@ -8,7 +8,12 @@ public class NavigationBaker : MonoBehaviour
 
     public NavMeshSurface[] surfaces;
 
-    
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) { ReBuildMesh(); }
@@ -16,10 +21,7 @@ public class NavigationBaker : MonoBehaviour
     }
 public void ReBuildMesh()
 {
-        for (int i = 0; i < surfaces.Length; i++)
-        {
-            surfaces[i].BuildNavMesh();
-        }
+        for (int i = 0; i < surfaces.Length; i++) { surfaces[i].BuildNavMesh(); }
 }
 
 }

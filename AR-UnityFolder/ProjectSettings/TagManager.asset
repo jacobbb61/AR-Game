@@ -10,6 +10,8 @@ TagManager:
   - Rotate
   - Button
   - MainFloor
+  - NotWalkable
+  - Drag
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Water
   - UI
   - NavMesh
-  - 
+  - NavMesh2
   - 
   - 
   - 
