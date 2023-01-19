@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 5487494769540906781}
   - component: {fileID: 5487494769540906791}
   - component: {fileID: 5487494769540906790}
+  - component: {fileID: 1840925761920758518}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Drag
@@ -412,6 +413,19 @@ MonoBehaviour:
   fromPos: {fileID: 0}
   AtPos1: 0
   move: 0
+--- !u!65 &1840925761920758518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5487494769540906783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.5, z: 0.4}
+  m_Center: {x: -0.15, y: 0, z: 0.15}
 --- !u!1 &5487494769765597817
 GameObject:
   m_ObjectHideFlags: 0

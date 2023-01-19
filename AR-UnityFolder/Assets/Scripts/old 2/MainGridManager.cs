@@ -6,6 +6,9 @@ public class MainGridManager : MonoBehaviour
 {
     int buttons = 0;
     Animator anim;
+    public Animator Level1anim;
+    public Animator Level2anim;
+    public Animator Level3anim;
     public Transform objectHit;
     public Material Green;
     public GameObject Button1, Button2, Button3, Button4;
@@ -20,7 +23,7 @@ public class MainGridManager : MonoBehaviour
     }
     void Update()
     {
-        if (Level1EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level2"); }
+        if (Level1EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level2"); Level1anim.SetTrigger("End"); }
         if (Level2EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level3"); }
         if (Level3EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Finish"); }
 

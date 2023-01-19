@@ -20,10 +20,6 @@ public class DragBridge : MonoBehaviour
         Level = GameObject.FindGameObjectWithTag("Level");
     }
 
-    private void Update()
-    {
-       // if (move) { Vector3.Lerp(fromPos.position, goingPos.position, Time.deltaTime); }
-    }
 
 
     public void Active()
@@ -50,6 +46,14 @@ public class DragBridge : MonoBehaviour
         Player.GetComponent<NavMeshAgent>().destination = Level.GetComponent<LevelManager>().LastGridHit.transform.position;
 
     
+    }
+
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Active();
     }
 
 
