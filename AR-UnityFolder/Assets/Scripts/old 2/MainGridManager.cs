@@ -24,8 +24,8 @@ public class MainGridManager : MonoBehaviour
     void Update()
     {
         if (Level1EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level2"); Level1anim.SetTrigger("End"); }
-        if (Level2EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level3"); Level2anim.SetTrigger("End"); Level3anim.SetTrigger("Start"); }
-        if (Level3EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Finish"); }
+        if (Level2EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level3"); Level2anim.SetTrigger("End");  }
+        if (Level3EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Finish"); Level3anim.SetTrigger("End"); }
 
 
         Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
