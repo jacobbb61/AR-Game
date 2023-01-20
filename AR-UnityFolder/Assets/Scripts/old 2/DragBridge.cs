@@ -7,9 +7,11 @@ public class DragBridge : MonoBehaviour
 
     GameObject Player;
     GameObject Level;
-    public Transform Pos1, Pos2, goingPos, fromPos;
+    public Transform Pos1, Pos2, target;
     public bool AtPos1 = false;
     public bool move = false;
+    public float speed = 1f;
+
 
 
     
@@ -21,31 +23,33 @@ public class DragBridge : MonoBehaviour
     }
 
 
+    void Update()
+    {
 
+        var step = speed * Time.deltaTime;
+
+        if (move) 
+        { 
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+
+        }
+
+        if (Vector3.Distance(transform.position, target.position) < 0.01f && move)
+        {
+            AtPos1 = !AtPos1;
+            move = false;  
+            Active();
+        }
+
+        if (AtPos1) { target = Pos2; } else { target = Pos1; }
+    }
     public void Active()
     {
-        Player.GetComponent<NavMeshAgent>().enabled = false;
-
-        if (AtPos1) { transform.position = Pos2.position; AtPos1 = false; }
-        else { transform.position = Pos1.position; AtPos1 = true; }   
-        
-        if (AtPos1)
-        {
-            fromPos = transform;
-            goingPos = Pos2;
-        }
-        else
-        {
-            fromPos = transform;
-            goingPos = Pos1;
-        }
-
 
         GameObject.FindGameObjectWithTag("Level").GetComponent<NavigationBaker>().ReBuildMesh();
+        Player.transform.parent = null;
         Player.GetComponent<NavMeshAgent>().enabled = true;
         Player.GetComponent<NavMeshAgent>().destination = Level.GetComponent<LevelManager>().LastGridHit.transform.position;
-
-    
     }
 
 
@@ -53,7 +57,9 @@ public class DragBridge : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Active();
+        Player.GetComponent<NavMeshAgent>().enabled = false;
+        Player.transform.parent = transform;
+        move = true;
     }
 
 

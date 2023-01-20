@@ -24,7 +24,7 @@ public class MainGridManager : MonoBehaviour
     void Update()
     {
         if (Level1EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level2"); Level1anim.SetTrigger("End"); }
-        if (Level2EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level3"); }
+        if (Level2EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level3"); Level2anim.SetTrigger("End"); Level3anim.SetTrigger("Start"); }
         if (Level3EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Finish"); }
 
 
