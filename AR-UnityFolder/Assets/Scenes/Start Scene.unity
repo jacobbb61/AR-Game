@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 501551239}
   - component: {fileID: 501551241}
   - component: {fileID: 501551240}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP) (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 380, y: 321}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501551240
 MonoBehaviour:
@@ -1205,12 +1205,12 @@ RectTransform:
   - {fileID: 1023707697}
   - {fileID: 30314643}
   - {fileID: 426448768}
-  - {fileID: 1042545930}
   - {fileID: 1031420873}
   - {fileID: 2134877543}
   - {fileID: 1997262648}
   - {fileID: 501551239}
   - {fileID: 1219322718}
+  - {fileID: 1042545930}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1479,7 +1479,7 @@ GameObject:
   - component: {fileID: 1031420873}
   - component: {fileID: 1031420875}
   - component: {fileID: 1031420874}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 1219322718}
   - component: {fileID: 1219322720}
   - component: {fileID: 1219322719}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP) (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1729,8 +1729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 63}
-  m_SizeDelta: {x: 1000, y: 500}
+  m_AnchoredPosition: {x: 0, y: 29}
+  m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219322719
 MonoBehaviour:
@@ -2114,7 +2114,7 @@ GameObject:
   - component: {fileID: 1997262648}
   - component: {fileID: 1997262650}
   - component: {fileID: 1997262649}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2139,7 +2139,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -6, y: 321}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997262649
 MonoBehaviour:
@@ -2249,7 +2249,7 @@ GameObject:
   - component: {fileID: 2134877543}
   - component: {fileID: 2134877545}
   - component: {fileID: 2134877544}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2274,7 +2274,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -401, y: 321}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134877544
 MonoBehaviour:

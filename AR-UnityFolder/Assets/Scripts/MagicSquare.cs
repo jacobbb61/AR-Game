@@ -16,7 +16,15 @@ public class MagicSquare : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        GameObject.FindGameObjectWithTag("Bell").GetComponent<Animator>().SetTrigger("Bell");
         Active();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        GameObject.FindGameObjectWithTag("Bell").GetComponent<Animator>().ResetTrigger("Bell");
     }
 
     void Active() 
