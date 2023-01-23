@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
                 }
                 else if (objectHit.CompareTag("Drag"))
                 {
-                    objectHit.GetComponent<DragBridge>().Active();
+                 //   objectHit.GetComponent<DragBridge>().Active();
                 }
             }
             //////////////////////////////////// 
@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
                     }
                     else if (objectHit.CompareTag("Drag"))
                     {
-                        objectHit.GetComponent<DragBridge>().Active();
+                    //    objectHit.GetComponent<DragBridge>().Active();
                     }
                 }
             } else { return; }

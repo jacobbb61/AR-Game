@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class MainGridManager : MonoBehaviour
 {
@@ -12,10 +13,11 @@ public class MainGridManager : MonoBehaviour
     public Transform objectHit;
     public Material Green;
     public GameObject Button1, Button2, Button3, Button4, L3player;
-    public bool B1, B2, B3, B4, Level3Nav, NavTime;
+    public bool B1, B2, B3, B4, Level3Nav, NavTime, SceneChange;
 
-    public GameObject Level1EndP, Level2EndP, Level3EndP ;
+    public GameObject Level1EndP, Level2EndP, Level3EndP, EndUI ;
     public float NT = 0f;
+    public float ST = 0f;
 
     void Start()
     {
@@ -24,14 +26,26 @@ public class MainGridManager : MonoBehaviour
     void Update()
     {
         if (Level1EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Level2"); Level1anim.SetTrigger("End"); Level3Nav = true; }
-        if (Level2EndP.GetComponent<PressurePlate>().On && Level3Nav==true) { anim.SetTrigger("Level3"); Level2anim.SetTrigger("End"); Level3Nav = false; NavTime = true; }
-        if (Level3EndP.GetComponent<PressurePlate>().On) { anim.SetTrigger("Finish"); Level3anim.SetTrigger("End"); }
+        if (Level2EndP.GetComponent<PressurePlate>().On && Level3Nav==true) { anim.SetTrigger("Level3"); Level2anim.SetTrigger("End");
+            //Level3Nav = false; NavTime = true;
+            SceneChange = true;
+            }
+        if (Level3EndP.GetComponent<PressurePlate>().On) { EndUI.SetActive(true); }
+
+        if (SceneChange)
+        {
+            ST += Time.deltaTime;
+            if (ST >= 4.5f) { SceneManager.LoadScene("Level3"); }
+        }
 
         if (NavTime)
         {
            
             NT += Time.deltaTime;
-            if (NT >= 3f) { L3player.GetComponent<NavMeshAgent>().enabled = true; NavTime = false; }
+            if (NT >= 3f) {
+                L3player.GetComponent<NavMeshAgent>().enabled = true;
+                NavTime = false;
+            }
         }
 
         Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
